@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://isccogwkjcwpzvvmgjqh.supabase.co; base-uri 'none'; object-src 'none'; form-action 'none'; frame-src 'none'">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Routelog · Sıralama hesabını sil</title>
+  <link rel="stylesheet" href="./account-delete.css">
+  <script type="module" src="./page.mjs"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a class="brand" href="https://enesgursoy6110.github.io/" aria-label="Gursoft">RL <span>Routelog <small>Gursoft</small></span></a>
+      <label class="language"><span data-text="language">Dil</span><select id="language" aria-label="Dil">
+        <option value="tr">Türkçe</option><option value="en">English</option><option value="ar">العربية</option>
+        <option value="de">Deutsch</option><option value="es">Español</option><option value="fr">Français</option>
+        <option value="it">Italiano</option><option value="ja">日本語</option><option value="ko">한국어</option>
+        <option value="pt">Português</option><option value="ru">Русский</option><option value="zh">中文</option>
+      </select></label>
+    </header>
+    <h1 data-text="title">Sıralama hesabını sil</h1>
+    <p class="intro" data-text="subtitle">Uygulamayı yeniden yüklemeden, şifreli yedeğinle hesabının silinmesini isteyebilirsin.</p>
+    <p class="notice" data-text="testNotice">Bu sayfa şu an yalnız test sıralama profillerini siler. Normal uygulamada sıralama henüz açık değildir.</p>
+    <section aria-labelledby="read-title">
+      <h2 id="read-title" data-text="step1">1. Yedeğindeki profili doğrula</h2>
+      <p data-text="localOnly">Yedek ve şifresi yalnız tarayıcıda açılır. Dosyan, şifren ve GPS verilerin sunucuya gönderilmez.</p>
+      <form id="read-form" autocomplete="off">
+        <label for="backup" data-text="backupLabel">Şifreli Routelog yedeği</label>
+        <input id="backup" type="file" required aria-describedby="backup-help">
+        <small id="backup-help" data-text="backupHelp">Sıralama profiline katıldıktan sonra alınmış bir yedek seç. En fazla 50 MB.</small>
+        <label for="password" data-text="passwordLabel">Yedek şifresi</label>
+        <input id="password" type="password" required autocomplete="off" spellcheck="false">
+        <button id="read" type="submit" data-text="read">Yedeği bu cihazda aç</button>
+      </form>
+    </section>
+    <section aria-labelledby="delete-title">
+      <h2 id="delete-title" data-text="step2">2. Silmeyi onayla</h2>
+      <div id="profile" hidden><span data-text="profileLabel">Profil kimliği</span><bdi id="profile-id"></bdi></div>
+      <p data-text="deletedData">Sıralama adı, puanlar, katkılar, sezon katılımı, kurtarma bilgisi ve bağlı anonim Supabase hesabı silinir.</p>
+      <p data-text="subscription">Telefondaki kişisel aktivitelerin ve rotaların bu sayfayla silinmez. Mağaza aboneliğin iptal edilmez.</p>
+      <form id="delete-form" autocomplete="off">
+        <label class="confirmation"><input id="confirm" type="checkbox" required disabled><span data-text="confirm">Bu profili kalıcı olarak silmek istiyorum. Eski yedeklerle geri getirilemeyeceğini anladım.</span></label>
+        <button id="erase" type="submit" class="danger" disabled data-text="erase">Sıralama hesabını kalıcı sil</button>
+      </form>
+      <button id="reset" type="button" class="secondary" data-text="reset">Seçimi temizle</button>
+      <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+    </section>
+    <details>
+      <summary data-text="remainingTitle">Silme sonrası kalan kayıtlar</summary>
+      <p data-text="remainingData">Eski yedekle yeniden oluşturmayı önlemek için ad ve Auth sahibi içermeyen minimal profil kimliği/silme anı kaydı kalır. Teknik servis kayıtları, RevenueCat müşteri verisi ve mağaza kayıtlarının temizliği ayrı süreçtir; bu test işlemi bunları silmez.</p>
+      <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener noreferrer" data-text="manageSubscription">Google Play aboneliklerini yönet</a>
+    </details>
+    <section aria-labelledby="help-title" class="help">
+      <h2 id="help-title" data-text="helpTitle">Yedeğine erişemiyor musun?</h2>
+      <p data-text="helpInfo">Silme talebin için destekle iletişime geçebilirsin. Yalnız kullanıcı adı sahiplik kanıtı değildir. Yedeğini, şifreni veya kurtarma kodunu e-postayla gönderme; talep güvenli sahiplik doğrulamasından sonra işlenir.</p>
+      <a href="mailto:gursoftwareofficial@gmail.com?subject=Routelog%20account%20deletion" data-text="support">Hesap silme talebi için destek</a>
+    </section>
+    <noscript>JavaScript is required for local decryption. You can request help at gursoftwareofficial@gmail.com. Do not email your backup, password or recovery code.</noscript>
+    <footer>Routelog · Gursoft · <code>com.gursoft.routelog</code><p data-text="privacyInfo">Sayfa çerez, analiz veya kalıcı tarayıcı depolaması kullanmaz. Yalnız silmeyi onaylayınca profil kimliği ve kurtarma kanıtı test sunucusuna gönderilir.</p></footer>
+  </main>
+</body>
+</html>
